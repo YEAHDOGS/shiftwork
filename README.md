@@ -4,7 +4,7 @@ A working demo of a police **paid detail** management system: the "calendar"
 behind off-duty officer scheduling. Built to show what a modern replacement
 for legacy detail-management processes looks like.
 
-**Live:** https://shiftwork.dogs.red · **All data is fictional.**
+**Live:** https://yeahdogs.github.io/shiftwork/ (custom domain `shiftwork.dogs.red` queued — needs the Cloudflare connector reconnect) · **All data is fictional.**
 
 ## What it does
 
