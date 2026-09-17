@@ -10,7 +10,7 @@
     </div>
   {/if}
   <div class="min-w-0">
-    <div class="text-xl sm:text-2xl font-bold tracking-tight truncate">{value}</div>
+    <div class="text-xl sm:text-2xl font-bold tracking-tight break-words leading-tight">{value}</div>
     <div class="text-xs text-neutral-400 font-medium">{label}</div>
     {#if sub}<div class="text-[11px] text-neutral-500 mt-0.5">{sub}</div>{/if}
   </div>

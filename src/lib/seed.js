@@ -94,12 +94,15 @@ export function seedShifts() {
       const client = pick(CLIENTS);
       const startMin = pick(STARTS);
       const endMin = startMin + pick([4, 6, 8]) * 60;
+      let title = pick(TITLES);
+      // "Overnight patrol" only makes sense for the evening start.
+      if (title === "Overnight patrol" && startMin !== 1080) title = pick(TITLES.filter((t) => t !== "Overnight patrol"));
       const needed = int(1, 4);
       const past = d < 0;
       const shift = {
         id: "sh-" + n,
         clientId: client.id,
-        title: pick(TITLES),
+        title,
         location: client.name,
         date,
         startMin,

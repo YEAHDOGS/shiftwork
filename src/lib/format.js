@@ -16,7 +16,7 @@ export function fmtDateLong(iso) {
 }
 
 export function fmtTime(min) {
-  const h24 = Math.floor(min / 60);
+  const h24 = Math.floor(min / 60) % 24;
   const m = min % 60;
   const ap = h24 >= 12 ? "PM" : "AM";
   const h = h24 % 12 === 0 ? 12 : h24 % 12;
