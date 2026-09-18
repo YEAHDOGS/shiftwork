@@ -95,13 +95,15 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
     <div class="bg-[#0e0e12]/80 border border-white/5 rounded-2xl p-4">
       <h2 class="text-sm font-bold mb-3">Scheduled hours — last 14 days</h2>
-      <div class="flex items-end gap-1 h-28">
-        {#each chart as c}
-          <div class="flex-1 flex flex-col items-center justify-end h-full gap-1" title={`${c.d}: ${fmtHours(c.hrs)}`}>
-            <div class="w-full rounded-t bg-[#ff3344]/70 hover:bg-[#ff3344]" style={`height: ${Math.max(3, (c.hrs / maxHrs) * 100)}%`}></div>
-            <span class="text-[9px] text-neutral-500">{c.d.slice(5).replace("-", "/")}</span>
-          </div>
-        {/each}
+      <div class="overflow-x-auto -mx-4 px-4 [&::-webkit-scrollbar]:hidden" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div class="flex items-end gap-1.5 h-28 min-w-[470px]">
+          {#each chart as c}
+            <div class="flex-1 min-w-0 flex flex-col items-center justify-end h-full gap-1" title={`${c.d}: ${fmtHours(c.hrs)}`}>
+              <div class="w-full rounded-t bg-[#ff3344]/70 hover:bg-[#ff3344]" style={`height: ${Math.max(3, (c.hrs / maxHrs) * 100)}%`}></div>
+              <span class="text-[9px] text-neutral-500 whitespace-nowrap">{c.d.slice(5).replace("-", "/")}</span>
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
 
